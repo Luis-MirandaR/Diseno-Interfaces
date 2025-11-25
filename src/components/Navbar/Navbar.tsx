@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Search, ChevronDown, ArrowRightFromLine, Home, Calendar, History, Users, MessageSquare, ThumbsUp, BookOpen, Edit } from 'lucide-react';
+import { Search, ChevronDown, ArrowRightFromLine } from 'lucide-react';
+import { Sidebar } from '../Sidebar/Sidebar';
 import './Navbar.css';
 
 
@@ -44,33 +45,7 @@ export const Navbar = ({ }) => {
                 </div>
             </nav>
 
-            {isSidebarOpen && (
-                <div className="sidebar-overlay" onClick={toggleSidebar}></div>
-            )}
-
-            <aside className={`sidebar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-                <div className="sidebar-header">
-                    <div className="sidebar-profile">
-                        <div className="sidebar-avatar">
-                            <Users size={32} />
-                        </div>
-                        <button className="sidebar-edit-btn">
-                            <span>Editar perfil</span>
-                            <Edit size={16} />
-                        </button>
-                    </div>
-                </div>
-
-                <nav className="sidebar-nav">
-                    <button className="sidebar-nav-item"><Home size={20} /><span>Inicio</span></button>
-                    <button className="sidebar-nav-item"><Calendar size={20} /><span>Sesiones Programadas</span></button>
-                    <button className="sidebar-nav-item"><History size={20} /><span>Historial de tutorias</span></button>
-                    <button className="sidebar-nav-item"><Users size={20} /><span>Foro Académico</span></button>
-                    <button className="sidebar-nav-item"><MessageSquare size={20} /><span>Chat</span></button>
-                    <button className="sidebar-nav-item"><ThumbsUp size={20} /><span>Recomendaciones</span></button>
-                    <button className="sidebar-nav-item"><BookOpen size={20} /><span>Recursos Académicos</span></button>
-                </nav>
-            </aside>
+            <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
         </>
     );
 }

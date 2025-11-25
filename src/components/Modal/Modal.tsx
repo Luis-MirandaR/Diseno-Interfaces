@@ -12,6 +12,7 @@ interface Props {
     professor: string;
 }
 
+//Modal recieves a boolean which indicate if its open, a handler for when its clicked outside or on cancel button to close, an image and the professor name.
 export const Modal = ({ isOpen, onClose, onConfirm, imageURL, professor }: Props) => {
     if (!isOpen) return null;
 

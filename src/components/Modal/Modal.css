@@ -160,7 +160,6 @@
     border-color: #9ca3af;
 }
 
-/* Estilos para el calendario nativo */
 .modal-date-input::-webkit-calendar-picker-indicator,
 .modal-time-input::-webkit-calendar-picker-indicator {
     cursor: pointer;

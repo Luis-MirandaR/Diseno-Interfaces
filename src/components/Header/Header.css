@@ -34,7 +34,6 @@
     object-fit: contain;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
 
     .header-logo-img,
